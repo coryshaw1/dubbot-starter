@@ -1,0 +1,23 @@
+{
+  "name": "dubbot-starter",
+  "version": "1.0.0",
+  "description": "A starting point to building your very own dubbot",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "dubapi": "^1.3.0",
+    "hapi": "^12.1.0",
+    "jethro": "^2.6.6",
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+  },
+  "scripts": {
+    "preversion": "gulp bot",
+    "version": "git add --all",
+    "postversion": "git push",
+    "bot": "gulp mine && node ./app/bot/index.js",
+    "start": "node app.js",
+  }
+}
