@@ -1,5 +1,4 @@
 var DubAPI = require("dubapi"),
-    mongoose = require("mongoose"),
     log = require("jethro"),
     //I use process.cwd as a little trick to get the the root of the app :P
     //I hate seeing "../../../../../../filename". STAHP IT! MMMKAY?.. K.
@@ -36,7 +35,6 @@ new DubAPI({
         bot.sendChat("online! version: " + pkg.version);
         bot.log("info", "BOT", "Bot Version: " + pkg.version);
         bot.log("info", "BOT", "Bot connected to: " + name);
-        });
     });
     bot.on("disconnected", function(name) {
         bot.log("warning", "BOT", "Disconnected from:" + name);
