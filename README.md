@@ -2,6 +2,10 @@
 
 [dubtrack.fm](https://dubtrack.fm) starter bot using [DubAPI](https://github.com/anjanms/DubAPI/).
 
+# Bots using this:
+
+* (SteveBot)[https://github.com/coryshaw1/SteveBot]
+
 # Installation and Running
 
 1) `git clone https://github.com/NitroGhost/dubbot-starter.git`
