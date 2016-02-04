@@ -4,7 +4,7 @@
 
 # Bots using this:
 
-* (SteveBot)[https://github.com/coryshaw1/SteveBot]
+* [SteveBot](https://github.com/coryshaw1/SteveBot)
 
 # Installation and Running
 
