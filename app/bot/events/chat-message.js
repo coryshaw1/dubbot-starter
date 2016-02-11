@@ -14,6 +14,19 @@ module.exports = function(bot) {
                     walk(_path);
                 } else {
                     if (file.indexOf(".js") > -1) {
+                        // add extra commands set in file if they exist
+                        if(typeof(require(_path).extraCommands) !== "undefined"){
+                            if(Array.isArray(require(_path).extraCommands)){
+                                // add each command in array into overall commands
+                                require(_path).extraCommands.forEach(function(command){
+                                    commands[command] = require(_path);
+                                });
+                            }
+                            else {
+                                throw new TypeError("Invalid extraCommands export for file: " + _path);
+                            }
+                        }
+
                         commands[file.split(".")[0]] = require(_path);
                     }
 
@@ -34,7 +47,7 @@ module.exports = function(bot) {
                 // add the command used to the data sent from the chat to be used later
                 data.trigger = token.substr(1).toLowerCase();
                 parsedCommands.push(data.trigger);
-                //if very first token, it's a command and we cangrab the
+                //if very first token, it's a command and we can grab the
                 //params (if any) and add to the data sent from chat
                 if (tokens.indexOf(token) === 0) {
                     //the params are an array of the remaining tokens
